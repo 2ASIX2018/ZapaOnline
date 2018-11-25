@@ -26,9 +26,13 @@ La pagina web tendra este aspecto:
   * Servicios
   * Novedades
   
+  ![Pagina principal](imagenes/ww.jpg)
+  
+* **Registro de usuarios**: En Este apartado encontraremos el registro de nuestros clientes.
+![Registro de usuarios](imagenes/2.jpg)
 
+* **Acceso de usuarios**: Paso que  sera obligatorio en nuestra web para poder realizar cualquier pedido.
 
-* ** Registro de usuarios**:
-
+![Acceso usuarios](imagenes/3.png)
 
 
