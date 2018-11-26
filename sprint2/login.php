@@ -38,14 +38,10 @@ else { // Aquesta clau la tancarem després d'afegir codi HTML pur
 
     <title>SB Admin - Login</title>
 
-    <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin.css" rel="stylesheet">
+ <?php
+  require_once("Styles.php");
+  ?>
+    
 
   </head>
 
@@ -91,6 +87,10 @@ else { // Aquesta clau la tancarem després d'afegir codi HTML pur
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<?php 
+require_once "footer.php"; 
+?>   
 
   </body>
 
