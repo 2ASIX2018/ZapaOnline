@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<?php
+session_start();
+if ($_SESSION['role']!="admin") header("location: index.php");// si el rol no es admin ens redirigix.
+?>
 <head>
 	<title>Formulario de productos</title>
 	<meta charset="utf-8">
