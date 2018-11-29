@@ -7,15 +7,15 @@ if(!isset($_SESSION["username"])) header("Location: index.php");
 // Esborrem tota la informació
 $_SESSION = array();
 // I les cookies pròpies de l'aplicació
-if(isset($_COOKIE["ASIXNewsUser"])){ 
+if(isset($_COOKIE["ZapaOnlineUser"])){ 
     // Per eliminar la cookie, li posem valor nul
      // I data de validesa el dia abans
-    setcookie("ASIXNewsUser", null, time()-3600);
+    setcookie("ZapaOnlineUser", null, time()-3600);
 }
-if(isset($_COOKIE["ASIXNewsRole"])){
+if(isset($_COOKIE["ZapaOnlineRole"])){
      // Per eliminar la cookie, li posem valor nul
      // I data de validesa el dia abans
-     setcookie("ASIXNewsRole", null, time()-3600);     
+     setcookie("ZapaOnlineRole", null, time()-3600);     
 }
 // Esborrem la cookie amb el nom de la sessió 
 if(isset($_COOKIE[session_name()])) {

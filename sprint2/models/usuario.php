@@ -33,20 +33,26 @@ class Usuari{
             $cadenaConnexio="mysql:host=".$connexio["servidor"].";dbname=".$connexio['bd'];
             $db = new PDO($cadenaConnexio, $connexio["usuari"], $connexio["contrassenya"]); 
             $consulta = $db->prepare('SELECT *  FROM Usuari WHERE login = ? OR email= ?');
-            $consulta>execute(array($usuari, $correu));
+            $consulta->execute(array($usuari, $correu));
             $resultado= $consulta->fetch();
 
             if ($resultado){
-                echo "El usu o email  ya existe";
+                ?>
+                <div class="alert alert-dismissible alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h4 class="alert-heading">ERROR!</h4>
+                <p class="mb-0">El usuario con el que esta intentando iniciar session YA existe. <a href="loginform.php" class="alert-link">Registrar usuario nuevo</a>.</p>
+              </div>
+<?php
 
             }
             
             else {
                 
             
-            $consulta1 = $db->prepare(" INSERT INTO 'Usuari' ('login', 'rol', 'password', 'email') VALUES (?, user, ?, ?) ");
-            $consulta1>execute(array($usuari, $pass, $correu));
-            header (" location:login.php");
+            $consultados = $db->prepare("INSERT INTO `Usuari` (`login`, `rol`, `password`, `email`) VALUES (?, 'user', ?, ?)");
+            $consultados->execute(array($usuari, $pass, $correu));
+            header ("location:login.php");
             }
             $db=null;
             

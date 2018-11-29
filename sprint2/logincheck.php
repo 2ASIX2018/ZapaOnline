@@ -43,7 +43,7 @@ require_once ("styles.php");
 
     <div class="alert alert-dismissible alert-warning">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <h4 class="alert-heading">Warning!</h4>
+  <h4 class="alert-heading">ERROR!</h4>
   <p class="mb-0">El usuario con el que esta intentando iniciar session no existe. <a href="loginform.php" class="alert-link">Registrar usuario</a>.</p>
 </div>
 </body>

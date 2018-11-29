@@ -7,7 +7,7 @@ $usuari=new Usuari();
 // Després caldrà consultar a la base de dades
 $user=$_REQUEST["inputUser"];
 $pass=$_REQUEST["inputPassword"];
-$remember=$_REQUEST["email"];
+$correu=$_REQUEST["email"];
 // Comprovem l'usuari amb el mètode validaUsuari
 $role=$usuari->registUsuari($user, $pass, $correu);
 

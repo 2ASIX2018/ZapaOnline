@@ -36,6 +36,9 @@ require_once ("styles.php");
 									<li class="nav-item px-lg-4">
 					<a class="nav-link text-uppercase text-expanded" href="store.php">Tienda</a>
 					</li>
+					<li class="nav-item px-lg-4">
+					<a class="nav-link text-uppercase text-expanded" href="loginform.php">Registro de usuarios</a>
+					</li>
         <?php
           }
           else {
