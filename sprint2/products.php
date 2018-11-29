@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+?>
   <head>
 
     <meta charset="utf-8">
@@ -12,6 +14,11 @@
 
 <?php
 require_once ("styles.php");
+//if (!isset($_SESSION['role']) {
+//header("location: index.php");// asi estem diguentli que si no te rol no podra visualisar la pagina, es a dir, tenim dos rols user i admin, si noes cualsevols dawuestos vol dir que no esta logueat.
+//}
+if ($_SESSION['role']!="user") header("location: index.php");
+// no funciona(pero per ahi van els tirs)if ($_SESSION['role']!="user"  || $_SESSION['role']!="admin" header("location: index.php"));// asi estem diguenñi que sol en enseñe esta pagina si el role de usuario es user o admin si nos que en dirigixca a index.php perque no som ningu pa vore aixo role es (user o admin), esta pagina la podrien vorer els dos
 ?>
 
   </head>
@@ -21,69 +28,31 @@ require_once ("styles.php");
     <?php
     require ("menu.php");
     ?>
+<?php
+require_once ("models/zapatos.php");
+$llista= new zapatos(); // zapatos sera el nombre de la clase que estamos llamando de zapatos.php 
+$llistat=$llista->llistazapas();
 
-    <section class="page-section">
-      <div class="container">
-        <div class="product-item">
-          <div class="product-item-title d-flex">
-            <div class="bg-faded p-5 d-flex ml-auto rounded">
-              <h2 class="section-heading mb-0">
-                <span class="section-heading-upper">Blended to Perfection</span>
-                <span class="section-heading-lower">Coffees &amp; Teas</span>
-              </h2>
-            </div>
-          </div>
-          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/products-01.jpg" alt="">
-          <div class="product-item-description d-flex mr-auto">
-            <div class="bg-faded p-5 rounded">
-              <p class="mb-0">We take pride in our work, and it shows. Every time you order a beverage from us, we guarantee that it will be an experience worth having. Whether it's our world famous Venezuelan Cappuccino, a refreshing iced herbal tea, or something as simple as a cup of speciality sourced black coffee, you will be coming back for more.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+for ($i=0; $i<count($llistat); $i++){
 
-    <section class="page-section">
-      <div class="container">
-        <div class="product-item">
-          <div class="product-item-title d-flex">
-            <div class="bg-faded p-5 d-flex mr-auto rounded">
-              <h2 class="section-heading mb-0">
-                <span class="section-heading-upper">Delicious Treats, Good Eats</span>
-                <span class="section-heading-lower">Bakery &amp; Kitchen</span>
-              </h2>
-            </div>
-          </div>
-          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/products-02.jpg" alt="">
-          <div class="product-item-description d-flex ml-auto">
-            <div class="bg-faded p-5 rounded">
-              <p class="mb-0">Our seasonal menu features delicious snacks, baked goods, and even full meals perfect for breakfast or lunchtime. We source our ingredients from local, oragnic farms whenever possible, alongside premium vendors for specialty goods.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+?>
 
-    <section class="page-section">
-      <div class="container">
-        <div class="product-item">
-          <div class="product-item-title d-flex">
-            <div class="bg-faded p-5 d-flex ml-auto rounded">
-              <h2 class="section-heading mb-0">
-                <span class="section-heading-upper">From Around the World</span>
-                <span class="section-heading-lower">Bulk Speciality Blends</span>
-              </h2>
-            </div>
-          </div>
-          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/products-03.jpg" alt="">
-          <div class="product-item-description d-flex mr-auto">
-            <div class="bg-faded p-5 rounded">
-              <p class="mb-0">Travelling the world for the very best quality coffee is something take pride in. When you visit us, you'll always find new blends from around the world, mainly from regions in Central and South America. We sell our blends in smaller to large bulk quantities. Please visit us in person for more details.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="card mb-3">
+  <h3 class="card-header"> <?php echo($llistat[$i]["nombre"]);?></h3>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+  </div>
+  <img style="height: 200px; width: 15%; display: block;" src=" <?php echo($llistat[$i]["img"]);?> " alt="Card image">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+
+<?php
+} // aqui estamos cerrando la virgulilla del for anterior
+?> 
+
 
 <?php 
 require_once ("footer.php"); 
