@@ -10,7 +10,6 @@ require_once ("styles.php");
 				
           if (isset($_SESSION['role']) && $_SESSION['role']=="admin") {
         ?>
-           
           <li class="nav-item px-lg-4">
 					<a class="nav-link text-uppercase text-expanded" href="admin.php"><button type="button" class="btn btn-info">Administrar</button></a>
 					</li>
@@ -34,7 +33,7 @@ require_once ("styles.php");
 					<a class="nav-link text-uppercase text-expanded" href="login.php">Acceder</a>
 									</li>
 									<li class="nav-item px-lg-4">
-					<a class="nav-link text-uppercase text-expanded" href="store.php">Tienda</a>
+					<a class="nav-link text-uppercase text-expanded" href="horario.php">Tienda</a>
 					</li>
 					<li class="nav-item px-lg-4">
 					<a class="nav-link text-uppercase text-expanded" href="loginform.php">Registro de usuarios</a>
