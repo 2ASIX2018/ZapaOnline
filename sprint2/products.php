@@ -25,7 +25,7 @@
   <body>
 
     <?php
-    require_once ("menu.php");
+    require ("menu.php");
     ?>
 
     <section class="page-section">

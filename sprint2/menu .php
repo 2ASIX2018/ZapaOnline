@@ -10,7 +10,16 @@ if (isset($_COOKIE['/2ASIX2018/ZapaOnline/Role'])) { $_SESSION['role'] = $_COOKI
 				<span class="navbar-toggler-icon"></span>
 			  </button>
 			  <div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav mx-auto">data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav mx-auto">
+				  <li class="nav-item active px-lg-4">
+					<a class="nav-link text-uppercase text-expanded" href="index.php">Home
+					  <span class="sr-only">(current)</span>
+					</a>
+				  </li>
 				  <li class="nav-item active px-lg-4">
 					<a class="nav-link text-uppercase text-expanded" href="index.php">Home
 					  <span class="sr-only">(current)</span>
@@ -36,7 +45,14 @@ if (isset($_COOKIE['/2ASIX2018/ZapaOnline/Role'])) { $_SESSION['role'] = $_COOKI
           if (isset($_SESSION['role']) && $_SESSION['role']=="admin") {
         ?>
           <li class="nav-item px-lg-4">
-					<a class="nav-link text-uppercase text-expanded" href="loginform.php">Registrar</a>
+					<a class="nav-link text-uppercase text-expanded" href="loginform.php">Administrar</a>
+                  </li>
+                 
+                <?php
+          if (isset($_SESSION['role']) && $_SESSION['role']=="user") {
+            ?>
+            <li class="nav-item px-lg-4">
+					<a class="nav-link text-uppercase text-expanded" href="index.php">Pagina principal</a>
                   </li>
         <?php
           }
